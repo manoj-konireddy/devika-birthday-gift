@@ -1,2 +1,0 @@
-Add your one MP3 song to this folder and name it song.mp3.
-The website is already configured to play music/song.mp3.
