@@ -1,0 +1,1164 @@
+/* ========================================
+   DEVIKA'S BIRTHDAY SURPRISE
+   Main styles
+======================================== */
+
+:root {
+  --bg: #17101f;
+  --bg2: #21152e;
+  --card: rgba(255, 255, 255, 0.055);
+
+  --pink: #f2a8c5;
+  --pink-light: #ffd9e8;
+  --lavender: #c8b4ff;
+
+  --cream: #fff4ec;
+  --muted: #c6b8cd;
+  --line: rgba(255, 255, 255, 0.12);
+
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--cream);
+  background: var(--bg);
+  font-family: var(--sans);
+  overflow-x: hidden;
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Background ambient effects */
+
+.ambient {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ambient-one {
+  background: #a54d91;
+  top: -180px;
+  left: -120px;
+}
+
+.ambient-two {
+  background: #6454bd;
+  right: -200px;
+  top: 45%;
+}
+
+/* ========================================
+   NAVIGATION BAR
+======================================== */
+
+.topbar {
+  width: min(1120px, calc(100% - 44px));
+  margin: auto;
+  height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #e7d9e9;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e9a9c7;
+  color: var(--pink-light);
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+.sound-toggle {
+  color: var(--pink-light);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 9px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 12px;
+}
+
+.sound-toggle span {
+  margin-left: 5px;
+}
+
+/* ========================================
+   COMMON SECTION STYLES
+======================================== */
+
+.section {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow,
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  color: var(--pink);
+  font-weight: 700;
+}
+
+.sparkle {
+  color: #f8d9a2;
+  margin: 0 8px;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  font-size: clamp(54px, 8vw, 92px);
+  line-height: 0.99;
+  margin: 26px 0 18px;
+}
+
+h1 em,
+h2 em {
+  color: var(--pink);
+  font-weight: 500;
+}
+
+.title-heart {
+  color: var(--pink);
+  font-family: var(--sans);
+  font-size: 0.5em;
+  vertical-align: top;
+  margin-left: 9px;
+}
+
+.hero-copy,
+.section-subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   BUTTONS AND LINKS
+======================================== */
+
+.hero-actions {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 27px;
+}
+
+.primary-btn {
+  border: 0;
+  border-radius: 99px;
+  background: linear-gradient(110deg, #f4aac8, #d7b9ff);
+  color: #2b1831;
+  padding: 14px 22px;
+  font-weight: 700;
+  font-size: 12px;
+  box-shadow: 0 7px 28px rgba(222, 153, 207, 0.16);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(222, 153, 207, 0.28);
+}
+
+.primary-btn span {
+  padding-left: 13px;
+  font-size: 17px;
+}
+
+.text-link {
+  color: #e7d9e9;
+  font-size: 12px;
+  border: 0;
+  background: transparent;
+}
+
+.text-link:hover {
+  color: var(--pink);
+}
+
+.primary-btn.small {
+  padding: 11px 16px;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+  min-height: 730px;
+  padding: 86px 0 30px;
+  position: relative;
+}
+
+.hero-art {
+  height: 300px;
+  max-width: 500px;
+  margin: 26px auto 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+  width: 280px;
+  height: 190px;
+  border: 1px solid rgba(245, 177, 210, 0.16);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.orbit-b {
+  width: 350px;
+  height: 145px;
+  transform: rotate(23deg);
+  border-color: rgba(199, 180, 255, 0.15);
+}
+
+/* Birthday cake illustration */
+
+.cake {
+  position: relative;
+  width: 180px;
+  height: 170px;
+  margin-top: 30px;
+  filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.22));
+}
+
+.cake-layer {
+  position: absolute;
+  left: 10px;
+  width: 160px;
+  height: 45px;
+  background: linear-gradient(90deg, #b76a9a, #e6a3c5 48%, #a85f94);
+  border-radius: 9px 9px 16px 16px;
+}
+
+.layer-one {
+  bottom: 35px;
+  height: 48px;
+}
+
+.layer-two {
+  bottom: 78px;
+  left: 23px;
+  width: 134px;
+  height: 42px;
+  background: linear-gradient(90deg, #e8b5ce, #ffe2e9 48%, #d18bb2);
+  border-radius: 8px 8px 14px 14px;
+}
+
+.cake-top {
+  position: absolute;
+  bottom: 105px;
+  left: 23px;
+  width: 134px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffe8ef;
+  z-index: 2;
+}
+
+.icing {
+  position: absolute;
+  bottom: 91px;
+  left: 23px;
+  height: 19px;
+  width: 134px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icing span {
+  width: 12px;
+  height: 20px;
+  background: #ffe8ef;
+  border-radius: 0 0 10px 10px;
+}
+
+.cake-plate {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  width: 180px;
+  height: 14px;
+  background: linear-gradient(#e7d7e9, #a88da9);
+  border-radius: 50%;
+}
+
+.candle {
+  position: absolute;
+  bottom: 123px;
+  width: 8px;
+  height: 31px;
+  background: repeating-linear-gradient(
+    135deg,
+    #fff1d9 0 5px,
+    #f4a9c7 5px 9px
+  );
+  border-radius: 3px 3px 0 0;
+  z-index: 5;
+}
+
+.candle-one {
+  left: 58px;
+}
+
+.candle-two {
+  left: 86px;
+  height: 39px;
+  bottom: 123px;
+}
+
+.candle-three {
+  left: 114px;
+}
+
+.candle i {
+  position: absolute;
+  width: 9px;
+  height: 13px;
+  border-radius: 70% 30% 65% 35%;
+  background: #ffd47d;
+  top: -13px;
+  left: -1px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 18px #ffbf72;
+  animation: flicker 0.8s infinite alternate;
+}
+
+/* Floating hearts and stars */
+
+.float-heart,
+.float-star {
+  position: absolute;
+  color: var(--pink);
+  animation: bob 3s ease-in-out infinite;
+}
+
+.heart-a {
+  left: 65px;
+  top: 48px;
+  font-size: 27px;
+}
+
+.heart-b {
+  right: 76px;
+  top: 70px;
+  font-size: 30px;
+  animation-delay: 0.7s;
+}
+
+.star-a {
+  right: 76px;
+  top: 15px;
+  color: #f9d99f;
+  font-size: 22px;
+}
+
+.star-b {
+  left: 95px;
+  bottom: 22px;
+  color: var(--lavender);
+  font-size: 25px;
+  animation-delay: 1s;
+}
+
+.art-caption {
+  position: absolute;
+  bottom: -1px;
+  color: #bfaac9;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.scroll-note {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: #a894b3;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.scroll-note span {
+  width: 24px;
+  height: 1px;
+  background: var(--pink);
+}
+
+/* ========================================
+   BIRTHDAY WISH SECTION
+======================================== */
+
+.wish-section {
+  padding: 112px 0 80px;
+}
+
+.wish-card {
+  max-width: 720px;
+  margin: 26px auto 0;
+  padding: 55px clamp(24px, 6vw, 75px);
+  border: 1px solid rgba(246, 182, 213, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.018)
+  );
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.card-flower {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: #e9b2d0;
+  font-size: 26px;
+}
+
+.handwritten {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--pink);
+  font-size: 20px;
+}
+
+.wish-card h2,
+.section-title {
+  font-size: clamp(33px, 5vw, 48px);
+  line-height: 1.17;
+  margin: 15px 0 20px;
+}
+
+.wish-copy {
+  max-width: 510px;
+  margin: 15px auto;
+  font-size: 13px;
+  line-height: 1.95;
+  color: #cdbed2;
+}
+
+.signature {
+  margin-top: 30px;
+  color: #e7cddd;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+}
+
+.signature span {
+  color: var(--pink);
+  font-style: normal;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+/* ========================================
+   MEMORIES SECTION
+======================================== */
+
+.memories-section {
+  padding: 90px 0 100px;
+}
+
+.section-title {
+  margin: 15px 0 5px;
+}
+
+/* Photo gallery: three photos visible on desktop */
+
+.photo-grid {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  text-align: left;
+}
+
+.photo-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual photo cards */
+
+.photo-card {
+  position: relative;
+  flex: 0 0 calc((100% - 28px) / 3);
+  height: 310px;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #33243d;
+  border: 1px solid var(--line);
+  scroll-snap-align: start;
+}
+
+.photo-card.photo-tall {
+  height: 310px;
+  min-height: 0;
+}
+
+/* Images fill each photo card */
+
+.photo-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Caption overlay */
+
+.photo-card .photo-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 32px 15px 15px;
+  background: linear-gradient(
+    transparent,
+    rgba(15, 8, 20, 0.85)
+  );
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+/* Placeholder cards */
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(
+      ellipse at 50% 20%,
+      rgba(218, 139, 181, 0.17),
+      transparent 60%
+    ),
+    #261a31;
+  color: #d9c7df;
+  text-align: center;
+}
+
+.placeholder-icon {
+  color: var(--pink);
+  font-size: 38px;
+  margin-bottom: 14px;
+}
+
+.placeholder strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.placeholder span {
+  color: #a994b4;
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.privacy-note {
+  color: #9986a4;
+  font-size: 10px;
+  margin-top: 16px;
+}
+
+/* ========================================
+   SLIDESHOW CONTROLS
+======================================== */
+
+.slideshow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.outline-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--pink-light);
+  font-size: 18px;
+}
+
+#slideStatus {
+  color: #bcaac5;
+  font-size: 11px;
+  min-width: 145px;
+}
+
+/* Full-screen slideshow */
+
+.slideshow-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(13, 7, 18, 0.96);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.slideshow-stage[hidden] {
+  display: none;
+}
+
+.slideshow-stage img {
+  max-width: min(90vw, 850px);
+  max-height: 76vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 15px 70px #000;
+  animation: fade-in 0.5s;
+}
+
+.stage-caption {
+  margin-top: 18px;
+  font-family: var(--serif);
+  color: var(--pink-light);
+  font-size: 20px;
+}
+
+.stage-close {
+  position: absolute;
+  right: 25px;
+  top: 18px;
+  border: 0;
+  color: white;
+  background: transparent;
+  font-size: 34px;
+}
+
+/* ========================================
+   BIRTHDAY WISH CAKE
+======================================== */
+
+.cake-section {
+  padding: 80px 0 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wish-cake-wrap {
+  height: 230px;
+  display: grid;
+  place-items: center;
+}
+
+.wish-cake {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin-top: 30px;
+}
+
+.wish-cake-layer {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  width: 170px;
+  height: 70px;
+  background: linear-gradient(90deg, #b56898, #e5a3c3, #b56898);
+  border-radius: 8px 8px 17px 17px;
+}
+
+.wish-cake-top {
+  position: absolute;
+  z-index: 2;
+  bottom: 77px;
+  left: 15px;
+  width: 170px;
+  height: 30px;
+  background: #ffe6ee;
+  border-radius: 50%;
+}
+
+.wish-icing {
+  position: absolute;
+  z-index: 3;
+  bottom: 64px;
+  left: 15px;
+  height: 20px;
+  width: 170px;
+  background:
+    radial-gradient(
+      ellipse at 10px 0,
+      #ffe6ee 0 11px,
+      transparent 12px
+    ) 0 0 / 34px 22px repeat-x;
+}
+
+.wish-cake-plate {
+  position: absolute;
+  bottom: 11px;
+  left: 0;
+  width: 200px;
+  height: 17px;
+  background: linear-gradient(#e9dce8, #a68ca9);
+  border-radius: 50%;
+}
+
+.wish-flames {
+  position: absolute;
+  z-index: 4;
+  bottom: 104px;
+  left: 48px;
+  width: 105px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wish-flames button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #ffd47d;
+  font-size: 22px;
+  text-shadow: 0 0 16px #ffb74f;
+  animation: flicker 0.8s infinite alternate;
+}
+
+.wish-flames button.blown {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.2);
+  transition: 0.35s;
+  pointer-events: none;
+}
+
+.wish-result {
+  color: #c7b3d0;
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 24px;
+}
+
+/* ========================================
+   FINAL BIRTHDAY MESSAGE
+======================================== */
+
+.final-section {
+  padding: 90px 0 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.final-stars {
+  color: #e7b4d0;
+  letter-spacing: 0.3em;
+  font-size: 19px;
+  margin-bottom: 25px;
+}
+
+.final-section h2 {
+  font-size: clamp(55px, 8vw, 82px);
+  line-height: 0.98;
+  margin: 20px 0;
+}
+
+.final-section > p:not(.section-label) {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.final-message {
+  color: var(--pink-light);
+  font-family: var(--serif);
+  font-size: 24px;
+  margin: 30px 0;
+}
+
+.final-message span {
+  display: inline-block;
+  animation: bob 2s infinite;
+}
+
+.back-top {
+  display: inline-block;
+  padding: 12px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 22px;
+  text-align: center;
+  color: #8f7b99;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+footer span {
+  color: var(--pink);
+  padding: 0 7px;
+}
+
+/* ========================================
+   CONFETTI
+======================================== */
+
+#confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -20px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  animation: confetti-fall var(--fall, 3s) linear forwards;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes flicker {
+  from {
+    transform: rotate(40deg) scale(0.92);
+    opacity: 0.85;
+  }
+
+  to {
+    transform: rotate(48deg) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(110vh) rotate(700deg);
+    opacity: 0.2;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+======================================== */
+
+@media (max-width: 650px) {
+  .topbar {
+    width: calc(100% - 28px);
+    height: 66px;
+  }
+
+  .brand {
+    font-size: 11px;
+  }
+
+  .sound-toggle {
+    padding: 8px 10px;
+  }
+
+  .sound-toggle span {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-top: 72px;
+    min-height: 700px;
+  }
+
+  .hero-art {
+    transform: scale(0.9);
+    margin-top: 20px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .wish-section {
+    padding-top: 85px;
+  }
+
+  .wish-card {
+    padding: 42px 22px;
+  }
+
+  /* Compact horizontal photo gallery on mobile */
+
+  .photo-grid {
+    gap: 10px;
+  }
+
+  .photo-card,
+  .photo-card.photo-tall {
+    flex-basis: 85%;
+    height: 280px;
+    min-height: 0;
+  }
+
+  .slideshow-controls {
+    gap: 8px;
+  }
+
+  #slideStatus {
+    min-width: 100%;
+    order: -1;
+    margin-bottom: 5px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+/* ========================================
+   PHOTO GALLERY AND VIEWER FIXES
+   ======================================== */
+
+/* Keep the gallery horizontal and scrollable */
+.photo-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  max-width: 100%;
+}
+
+/* Keep desktop cards aligned and evenly sized */
+.photo-card,
+.photo-card.photo-tall {
+  flex: 0 0 calc((100% - 28px) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* Make photo cards respond clearly to interaction */
+.photo-card {
+  cursor: pointer;
+}
+
+/* Keep the full-screen viewer inside the viewport */
+.slideshow-stage {
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 60px 20px 24px;
+}
+
+.slideshow-stage img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 76vh;
+  object-fit: contain;
+}
+
+.stage-caption {
+  max-width: 90vw;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.stage-close {
+  z-index: 2;
+  padding: 8px 12px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 650px) {
+  .photo-grid {
+    gap: 10px;
+  }
+
+  .photo-card,
+  .photo-card.photo-tall {
+    flex: 0 0 85%;
+    height: 280px;
+  }
+
+  .slideshow-stage {
+    padding: 58px 12px 20px;
+  }
+
+  .slideshow-stage img {
+    max-width: 94vw;
+    max-height: 70vh;
+  }
+
+  .stage-caption {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+
+  .stage-close {
+    top: 8px;
+    right: 10px;
+    font-size: 30px;
+  }
+}
+
+
+/* Explore Memories button */
+#exploreMemories {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px auto 28px;
+  padding: 13px 26px;
+  border: 1px solid #b8799c;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f1b1d0, #d99bc8);
+  color: #291529;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#exploreMemories:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(231, 155, 198, 0.2);
+}
+
+/* Keep the gallery centered and prevent the first card
+   from appearing cut off */
+#photoGrid {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 8px 12px 16px;
+  scroll-margin-top: 24px;
+}
+
+/* Mobile-friendly gallery spacing */
+@media (max-width: 600px) {
+  #exploreMemories {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  #photoGrid {
+    padding-inline: 16px;
+  }
+}
+
+

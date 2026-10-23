@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#21152e" />
+
+  <title>For Devika 💖 | Birthday Surprise</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div id="confetti-layer" aria-hidden="true"></div>
+
+  <nav class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">D</span>
+      A little something for Devika
+    </a>
+
+    <button
+      class="sound-toggle"
+      id="soundToggle"
+      aria-pressed="false"
+      title="Toggle music"
+    >
+      ♫ <span>Music off</span>
+    </button>
+  </nav>
+
+  <main>
+    <!-- Birthday welcome section -->
+    <section class="hero section" id="home">
+      <div class="eyebrow">
+        <span class="sparkle">✦</span>
+        TODAY IS ALL ABOUT YOU
+        <span class="sparkle">✦</span>
+      </div>
+
+      <h1>
+        Happy Birthday,<br />
+        <em>Devika</em><span class="title-heart">♡</span>
+      </h1>
+
+      <p class="hero-copy">
+        A little page full of love, smiles, and wishes — made just for you.
+      </p>
+
+      <div class="hero-actions">
+        <button class="primary-btn" id="openSurprise">
+          Open your surprise <span>↗</span>
+        </button>
+
+        <a class="text-link" href="#memories">Skip to memories ↓</a>
+      </div>
+
+      <div
+        class="hero-art"
+        aria-label="Illustration of a birthday cake with candles"
+      >
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+
+        <span class="float-heart heart-a">♥</span>
+        <span class="float-heart heart-b">♡</span>
+        <span class="float-star star-a">✦</span>
+        <span class="float-star star-b">✧</span>
+
+        <div class="cake">
+          <div class="candle candle-one"><i></i></div>
+          <div class="candle candle-two"><i></i></div>
+          <div class="candle candle-three"><i></i></div>
+
+          <div class="cake-top"></div>
+
+          <div class="icing">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="cake-layer layer-one"></div>
+          <div class="cake-layer layer-two"></div>
+          <div class="cake-plate"></div>
+        </div>
+
+        <p class="art-caption">Make a wish, birthday girl ✨</p>
+      </div>
+
+      <div class="scroll-note">
+        <span></span>
+        THERE'S MORE BELOW
+      </div>
+    </section>
+
+    <!-- Birthday wishes section -->
+    <section class="wish-section section" id="wish">
+      <div class="section-label">A NOTE FOR YOU</div>
+
+      <div class="wish-card">
+        <div class="card-flower">✿</div>
+
+        <p class="handwritten">Dear Devika,</p>
+
+        <h2>
+          May your next chapter<br />
+          be your <em>happiest one yet.</em>
+        </h2>
+
+        <p class="wish-copy">
+          You deserve the kind of happiness that stays, the kind of people
+          who feel like sunshine, and a hundred little reasons to smile
+          every day. I hope this year brings you beautiful surprises,
+          exciting adventures, peace in your heart, and dreams that come
+          true one by one.
+        </p>
+
+        <p class="wish-copy">
+          Thank you for being the lovely person you are. Keep shining in
+          your own special way — the world is brighter with you in it.
+        </p>
+
+        <div class="signature">
+          With warm wishes &amp; lots of smiles <span>♡</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo memories section -->
+    <section class="memories-section section" id="memories">
+      <div class="section-label">LITTLE MOMENTS, BIG SMILES</div>
+
+      <h2 class="section-title">Your memory <em>lane</em></h2>
+
+      <p class="section-subtitle">
+        Every picture holds a memory, every memory holds a smile. ♡
+      </p>
+
+      <button type="button" id="exploreMemories">
+        ♡ Explore the memories
+      </button>
+
+      <!-- Photo memories section -->
+      <div class="photo-grid" id="photoGrid">
+      </div>
+
+
+      <p class="privacy-note">
+        A collection of little moments and memories, made just for you. ♡
+      </p>
+
+      <div class="slideshow-controls">
+        <button
+          class="outline-btn"
+          id="prevSlide"
+          aria-label="Previous slide"
+        >
+          ←
+        </button>
+
+        <span id="slideStatus">Your memories, your story</span>
+
+        <button
+          class="outline-btn"
+          id="nextSlide"
+          aria-label="Next slide"
+        >
+          →
+        </button>
+
+        <button class="primary-btn small" id="playSlideshow">
+          ▶ Play slideshow
+        </button>
+      </div>
+
+      <div class="slideshow-stage" id="slideshowStage" hidden>
+        <button
+          class="stage-close"
+          id="closeStage"
+          aria-label="Close slideshow"
+        >
+          ×
+        </button>
+
+        <img id="stageImage" alt="Birthday memory" />
+
+        <div class="stage-caption" id="stageCaption"></div>
+      </div>
+    </section>
+
+    <!-- Birthday cake and wishes section -->
+    <section class="cake-section section" id="cake">
+      <div class="section-label">ONE MORE THING…</div>
+
+      <h2 class="section-title">Time to make a <em>wish</em></h2>
+
+      <p class="section-subtitle">
+        Tap the candles to blow them out, then let the wishes fly.
+      </p>
+
+      <div class="wish-cake-wrap">
+        <div class="wish-cake">
+          <div class="wish-flames" id="wishFlames">
+            <button aria-label="Blow out candle 1">✦</button>
+            <button aria-label="Blow out candle 2">✦</button>
+            <button aria-label="Blow out candle 3">✦</button>
+          </div>
+
+          <div class="wish-cake-top"></div>
+          <div class="wish-icing"></div>
+          <div class="wish-cake-layer"></div>
+          <div class="wish-cake-plate"></div>
+        </div>
+      </div>
+
+      <p class="wish-result" id="wishResult" aria-live="polite">
+        Close your eyes, think of something wonderful, and tap each flame. ✨
+      </p>
+
+      <button class="primary-btn" id="wishButton">
+        Send my wishes into the universe ✨
+      </button>
+    </section>
+
+    <!-- Final birthday message -->
+    <section class="final-section section">
+      <div class="final-stars">✦　✧　♡　✧　✦</div>
+
+      <p class="section-label">YOUR DAY. YOUR MAGIC.</p>
+
+      <h2>
+        Keep glowing,<br />
+        <em>Devika.</em>
+      </h2>
+
+      <p>
+        May the year ahead be as lovely and unforgettable as you are.
+      </p>
+
+      <div class="final-message">
+        Happy Birthday! <span>🎂</span>
+      </div>
+
+      <button class="text-link back-top" id="backTop">
+        ↑ Back to the beginning
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    Made with ♡, just for Devika <span>•</span> A little birthday magic
+  </footer>
+
+  <audio
+    id="bgMusic"
+    src="music/song.mp3"
+    loop
+    preload="none"
+  ></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
